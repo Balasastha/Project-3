@@ -7,17 +7,17 @@ spec:
   selector:
     matchLabels:
       app: healthcare
-    template:
-      metadata:
-        labels:
-          app: healthcare
-      spec: 
-        containers:
-        - name: healthcare
-          image: balasastha/healthcare-domain:3
-          ports:
-          - containerPort: 8086
-            
+  template:
+    metadata:
+      labels:
+        app: healthcare
+    spec: 
+      containers:
+      - name: healthcare
+        image: balasastha/healthcare-domain:3
+        ports:
+        - containerPort: 8086
+
 ---
 apiVersion: v1
 kind: Service
@@ -31,3 +31,4 @@ spec:
     - port: 80
       targetPort: 8086
       nodePort: 30007
+
